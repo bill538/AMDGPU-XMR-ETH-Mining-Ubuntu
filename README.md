@@ -98,13 +98,9 @@ lspci -nn | grep -E 'VGA|Display'
 ```
 
 ### AMDGPU commands (clinfo ...)
-Edit your ```.profile```
+Update system profile. ```.profile```
 ```sh
-vi ~/.profile
-```
-and add amdgpu-pro PATH to new line
-```sh
-PATH="/opt/amdgpu-pro/bin:$PATH"
+echo 'export PATH="/opt/rocm/bin:/opt/amdgpu-pro/bin:/opt/amdgpu/bin:${PATH}"' >  /etc/profile.d/miner.sh
 ```
 
 ## Tuning
