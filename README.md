@@ -32,6 +32,7 @@ sudo apt upgrade
 ### Install packages (optional)
 ```sh
 sudo apt install mc vim htop lshw
+sudo apt install libncurses-dev libcurl4-gnutls-dev iotop vim rsync git iftop build-essential cmake
 ```
 
 ### Disable screensaver, AMD tweaks, fall back to ethX network interface naming
