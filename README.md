@@ -98,6 +98,11 @@ sudo update-pciids
 lspci -nn | grep -E 'VGA|Display'
 ```
 
+### Add OpenCL links to /usr/lib
+```sh
+ln -s /opt/amdgpu-pro/lib/x86_64-linux-gnu/* /usr/lib/x86_64-linux-gnu/
+```
+
 ### AMDGPU commands (clinfo ...)
 Update system profile. ```.profile```
 ```sh
