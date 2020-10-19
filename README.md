@@ -1,4 +1,4 @@
-# AMD RX 480/570/580 Mining on Ubuntu Server 18.04 LTS
+# AMD RX 480/570/580 Mining on Ubuntu Server 20.04 LTS
 
 ### Install Ubuntu Server with the HWE kernel
 
@@ -25,7 +25,7 @@ https://wiki.ubuntu.com/Kernel/LTSEnablementStack
 
 ```sh
 sudo apt update
-sudo apt install --install-recommends linux-generic-hwe-18.04
+sudo apt install --install-recommends linux-generic-hwe-20.04
 sudo apt upgrade
 ```
 
@@ -43,8 +43,9 @@ sudo vi /etc/default/grub
 
 Replace ```GRUB_CMDLINE_LINUX_DEFAULT``` and ```GRUB_CMDLINE_LINUX``` lines
 ```sh
-GRUB_CMDLINE_LINUX_DEFAULT="text amdgpu.dc=0 amdgpu.ppfeaturemask=0xffffffff"
-GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
+GRUB_CMDLINE_LINUX_DEFAULT="text amdgpu.ppfeaturemask=0xffffffff"
+GRUB_CMDLINE_LINUX=""
+# GRUB_CMDLINE_LINUX="biosdevname=0"
 ```
 ```amdgpu.ppfeaturemask=0xffffffff``` kernel boot option allows control of GPU power states (GPU / VRAM clocks and voltages)
 
