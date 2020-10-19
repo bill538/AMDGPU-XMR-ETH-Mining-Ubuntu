@@ -86,6 +86,9 @@ ln -s /opt/rocm/opencl/include/CL /usr/include/
 ln -s /opt/rocm/opencl/lib/* /usr/lib/
 
 reboot
+
+# Once rebooted you can check the current featuremask by
+printf "0x%08x\n" $(cat /sys/module/amdgpu/parameters/ppfeaturemask)
 ```
 
 ### Install AMDGPU Driver + OpenCL + ROCm
