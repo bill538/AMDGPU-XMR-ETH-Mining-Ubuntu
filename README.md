@@ -76,12 +76,16 @@ wget -q -O - http://repo.radeon.com/rocm/rocm.gpg.key | sudo apt-key add -
 
 echo 'deb [arch=amd64] http://repo.radeon.com/rocm/apt/debian/ xenial main' | sudo tee /etc/apt/sources.list.d/rocm.list
 
-sudo apt update -y
+apt update -y
 
 apt install libncurses-dev libcurl4-openssl-dev iotop vim rsync git iftop build-essential cmake rocm-opencl-dev rocm-opencl rocm-utils rocm-dev rocm-bandwidth-test -y
 
-ln -s /opt/rocm-3.8.0/opencl/include/CL /usr/include/
-ln -s /opt/rocm-3.8.0/opencl/lib/* /usr/lib/
+echo 'export PATH="/opt/rocm/bin:${PATH}"' >  /etc/profile.d/miner.sh
+
+ln -s /opt/rocm/opencl/include/CL /usr/include/
+ln -s /opt/rocm/opencl/lib/* /usr/lib/
+
+reboot
 ```
 
 ### Install AMDGPU Driver + OpenCL + ROCm
